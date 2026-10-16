@@ -1,0 +1,370 @@
+/* colour palette based on logo colour */ 
+:root { 
+    --primary-green: #339966; 
+    --dark-green: #2a7d54; 
+    --light-green: #e8f5f0; 
+    --accent-green: #66b893; 
+    --text-dark: #2c3e50; 
+    --text-light: #ffffff; 
+    --border-gray: #cccccc; 
+    --error-red: #d9534f; 
+    --success-green: #5cb85c; 
+} 
+
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+} 
+
+body { 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    background-color: #f4f4f4; 
+    color: var(--text-dark); 
+    line-height: 1.6; 
+} 
+
+/* nav bar */ 
+.navbar, div[style*="border-bottom: 1px solid black"] { 
+    background-color: var(--primary-green) !important; 
+    padding: 15px 30px !important; 
+    border-bottom: none !important; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
+} 
+
+.navbar img { 
+    height: 50px !important; 
+    vertical-align: middle; 
+    margin-right: 15px; 
+    background-color: white; 
+    padding: 5px; 
+    border-radius: 4px; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+} 
+
+.navbar span[style*="font-size"] { 
+    font-size: 28px !important; 
+    font-weight: bold; 
+    color: var(--text-light) !important; 
+    margin-left: 10px; 
+} 
+
+.navbar a { 
+    color: var(--text-light) !important; 
+    text-decoration: none !important; 
+    font-weight: 500; 
+    transition: color 0.3s ease; 
+} 
+
+.navbar a:hover { 
+    color: var(--light-green) !important; 
+} 
+
+.navbar span[style*="float:right"] a { 
+    margin: 0 5px; 
+    padding: 8px 15px; 
+    border-radius: 4px; 
+    transition: background-color 0.3s ease; 
+} 
+
+.navbar span[style*="float:right"] a:hover { 
+    background-color: var(--dark-green); 
+} 
+
+/* Pipe separator styling */ 
+.navbar span[style*="float:right"] { 
+    display: flex; 
+    align-items: center; 
+    gap: 5px; 
+} 
+
+/* headings */ 
+h2 { 
+    color: var(--primary-green); 
+    margin: 30px 0 20px 0; 
+    font-size: 2em; 
+    text-align: center; 
+    font-weight: 600; 
+} 
+
+/* forms */ 
+form { 
+    background-color: white; 
+    max-width: 500px; 
+    margin: 30px auto; 
+    padding: 40px; 
+    border-radius: 8px; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+} 
+
+label { 
+    display: block; 
+    margin-bottom: 8px; 
+    color: var(--text-dark); 
+    font-weight: 500; 
+    font-size: 0.95em; 
+} 
+
+input[type="text"], 
+input[type="password"], 
+select { 
+    width: 100%; 
+    padding: 12px; 
+    margin-bottom: 20px; 
+    border: 2px solid var(--border-gray); 
+    border-radius: 4px; 
+    font-size: 1em; 
+    transition: border-color 0.3s ease; 
+} 
+
+input[type="text"]:focus, 
+input[type="password"]:focus, 
+select:focus { 
+    outline: none; 
+    border-color: var(--primary-green); 
+    box-shadow: 0 0 5px rgba(51, 153, 102, 0.3); 
+} 
+
+/* buttons */ 
+button[type="submit"], 
+button { 
+    background-color: var(--primary-green); 
+    color: white; 
+    padding: 12px 30px; 
+    border: none; 
+    border-radius: 4px; 
+    font-size: 1em; 
+    font-weight: 600; 
+    cursor: pointer; 
+    transition: background-color 0.3s ease, transform 0.1s ease; 
+    width: 100%; 
+    margin-top: 10px; 
+} 
+
+button[type="submit"]:hover, 
+button:hover { 
+    background-color: var(--dark-green); 
+    transform: translateY(-2px); 
+} 
+
+button[type="submit"]:active, 
+button:active { 
+    transform: translateY(0); 
+} 
+
+/* secondary buttons */ 
+form+form button, 
+button[type="submit"]:not([name="login"]):not([name="register"]) { 
+    background-color: white; 
+    color: var(--primary-green); 
+    border: 2px solid var(--primary-green); 
+    margin-top: 15px; 
+} 
+
+form+form button:hover { 
+    background-color: var(--light-green); 
+    color: var(--dark-green); 
+} 
+
+/* errors displayed */ 
+p[style*="color:red"], 
+ul[style*="color:red"] { 
+    background-color: #fdecea; 
+    color: var(--error-red) !important; 
+    padding: 15px; 
+    border-left: 4px solid var(--error-red); 
+    border-radius: 4px; 
+    margin: 20px auto; 
+    max-width: 500px; 
+} 
+
+ul[style*="color:red"] { 
+    list-style-position: inside; 
+} 
+
+/* book covers displayed */ 
+div[style*="border-bottom:1px solid #ccc"] { 
+    background-color: white; 
+    border: 1px solid var(--border-gray) !important; 
+    border-radius: 8px; 
+    padding: 20px !important; 
+    margin: 20px auto !important; 
+    max-width: 900px; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); 
+    transition: box-shadow 0.3s ease; 
+    display: flex !important; 
+    align-items: center !important; 
+    gap: 20px; 
+} 
+
+div[style*="border-bottom:1px solid #ccc"]:hover { 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+} 
+
+div[style*="border-bottom:1px solid #ccc"] img { 
+    border-radius: 4px; 
+    border: 1px solid var(--border-gray); 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+    width: 120px !important; 
+    height: 180px !important; 
+    object-fit: cover; 
+    flex-shrink: 0; 
+} 
+
+div[style*="border-bottom:1px solid #ccc"]>div { 
+    flex: 1; 
+} 
+
+div[style*="border-bottom:1px solid #ccc"] strong { 
+    color: var(--primary-green); 
+    font-weight: 600; 
+} 
+
+/* status of the books, wether reserved or available */ 
+span[style*="color:red"] { 
+    background-color: #fdecea; 
+    padding: 4px 12px; 
+    border-radius: 4px; 
+    font-weight: 600; 
+} 
+
+span[style*="color:green"] { 
+    background-color: #e8f5e9; 
+    padding: 4px 12px; 
+    border-radius: 4px; 
+    font-weight: 600; 
+} 
+
+/* "reserve this book" button */ 
+div[style*="border-bottom:1px solid #ccc"] form { 
+    flex-shrink: 0; 
+    margin: 0 !important; 
+} 
+
+div[style*="border-bottom:1px solid #ccc"] form button { 
+    width: auto; 
+    padding: 10px 25px; 
+    margin: 0; 
+    font-size: 0.95em; 
+} 
+
+/* page index at the botton */ 
+div[style*="margin-top:20px"] { 
+    text-align: center; 
+    margin: 30px 0 !important; 
+    padding: 20px; 
+} 
+
+div[style*="margin-top:20px"] a { 
+    display: inline-block; 
+    padding: 8px 15px; 
+    margin: 0 5px; 
+    background-color: white; 
+    color: var(--primary-green); 
+    text-decoration: none; 
+    border: 2px solid var(--primary-green); 
+    border-radius: 4px; 
+    transition: all 0.3s ease; 
+} 
+
+div[style*="margin-top:20px"] a:hover { 
+    background-color: var(--primary-green); 
+    color: white; 
+} 
+
+div[style*="margin-top:20px"] strong { 
+    display: inline-block; 
+    padding: 8px 15px; 
+    margin: 0 5px; 
+    background-color: var(--primary-green); 
+    color: white; 
+    border-radius: 4px; 
+}
+
+/* search form */ 
+form[action="searchForBooks.php"] { 
+    max-width: 700px; 
+} 
+
+form[action="searchForBooks.php"] button { 
+    width: auto; 
+    padding: 12px 40px; 
+    margin-top: 10px; 
+} 
+
+hr { 
+    border: none; 
+    border-top: 2px solid var(--border-gray); 
+    margin: 30px auto; 
+    max-width: 900px; 
+} 
+
+/* "no results" messages */ 
+p { 
+    text-align: center; 
+    color: var(--text-dark); 
+    font-size: 1.1em; 
+    margin: 30px 0; 
+} 
+
+/* responsiveness */ 
+@media (max-width: 768px) { 
+    .navbar { 
+        flex-direction: column; 
+        text-align: center; 
+    } 
+
+    .navbar span[style*="float:right"] { 
+        float: none !important; 
+        margin-top: 15px; 
+    } 
+
+    form { 
+        margin: 20px; 
+        padding: 30px 20px; 
+    } 
+
+    div[style*="display:flex"] { 
+        flex-direction: column !important; 
+    } 
+
+    div[style*="display:flex"] img { 
+        margin-bottom: 15px; 
+        margin-right: 0 !important; 
+    } 
+} 
+
+input[type="text"]::placeholder, 
+input[type="password"]::placeholder { 
+    color: #999; 
+    font-style: italic; 
+} 
+
+select { 
+    cursor: pointer; 
+    background-color: white; 
+} 
+
+body>h2:first-of-type { 
+    margin-top: 80px; 
+} 
+
+body>form, 
+body>p { 
+    animation: fadeIn 0.5s ease-in; 
+} 
+
+@keyframes fadeIn { 
+    from { 
+        opacity: 0; 
+        transform: translateY(20px); 
+    } 
+
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+    } 
+} 
